@@ -39,7 +39,7 @@ class AuthController
   Future<void> currentUser(BuildContext context) async {
     final instance = await SharedPreferences.getInstance();
 
-    await Future.delayed(const Duration(seconds: 12));
+    await Future.delayed(const Duration(seconds: 2));
 
     if(instance.containsKey("user"))
     {
