@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nlw_payflow_flutter/modules/extract/extract_page.dart';
 import 'package:nlw_payflow_flutter/modules/home/home_controller.dart';
 import 'package:nlw_payflow_flutter/shared/models/boleto_model.dart';
 import 'package:nlw_payflow_flutter/shared/themes/app_colors.dart';
@@ -21,7 +22,7 @@ class _HomePageState extends State<HomePage> {
 
   var pages = [
     MeusBoletosPage(),
-    home2
+    ExtractPage()
   ];
 
   @override
@@ -105,7 +106,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-var home2 = Container(
-  color: Colors.blue,
-);
