@@ -90,9 +90,12 @@ class _HomePageState extends State<HomePage> {
                     color: controller.currentPage == 0 ? AppColors.primary : AppColors.body,
                     borderRadius: BorderRadius.circular(10)),
                 child: IconButton(
-                    onPressed: () {
+                    onPressed: () async {
                       //Navigator.pushNamed(context, "/barcode_scanner");
-                      Navigator.pushNamed(context, "/insert_boleto");
+                      await Navigator.pushNamed(context, "/insert_boleto");
+                      setState(() {
+                        
+                      });
                     },
                     icon: Icon(
                       Icons.add_box_outlined,
