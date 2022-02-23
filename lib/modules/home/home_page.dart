@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:nlw_payflow_flutter/modules/home/home_controller.dart';
+import 'package:nlw_payflow_flutter/shared/models/boleto_model.dart';
 import 'package:nlw_payflow_flutter/shared/themes/app_colors.dart';
 import 'package:nlw_payflow_flutter/shared/themes/app_text_styles.dart';
+import 'package:nlw_payflow_flutter/shared/widget/boleto_list/boleto_list.dart';
+import 'package:nlw_payflow_flutter/shared/widget/boleto_tile/boleto_tile.dart';
+
+import '../meus_boletos/meus_boletos_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   var controller = HomeController();
 
   var pages = [
-    home1,
+    MeusBoletosPage(),
     home2
   ];
 
@@ -100,10 +105,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-var home1 = Container(
-  color: Colors.red,
-);
 
 var home2 = Container(
   color: Colors.blue,
