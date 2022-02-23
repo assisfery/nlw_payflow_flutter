@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:nlw_payflow_flutter/modules/extract/extract_page.dart';
 import 'package:nlw_payflow_flutter/modules/home/home_controller.dart';
 import 'package:nlw_payflow_flutter/shared/models/boleto_model.dart';
+import 'package:nlw_payflow_flutter/shared/models/user_model.dart';
 import 'package:nlw_payflow_flutter/shared/themes/app_colors.dart';
 import 'package:nlw_payflow_flutter/shared/themes/app_text_styles.dart';
 import 'package:nlw_payflow_flutter/shared/widget/boleto_list/boleto_list.dart';
@@ -10,7 +12,12 @@ import 'package:nlw_payflow_flutter/shared/widget/boleto_tile/boleto_tile.dart';
 import '../meus_boletos/meus_boletos_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+
+  UserModel user;
+  HomePage({
+    Key? key,
+    required this.user,
+  }) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -38,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                 text: "Olá, ",
                 style: AppTextStyles.titleRegular,
                 children: [
-                  TextSpan(text: "Ax", style: AppTextStyles.titleBoldBackground)
+                  TextSpan(text: widget.user.name, style: AppTextStyles.titleBoldBackground)
                 ])),
             subtitle: Text(
               "Mantenha suas contas em dia",
@@ -48,7 +55,9 @@ class _HomePageState extends State<HomePage> {
               height: 48,
               width: 48,
               decoration: BoxDecoration(
-                  color: Colors.black, borderRadius: BorderRadius.circular(5)),
+                  color: Colors.black, borderRadius: BorderRadius.circular(5),
+                  image: DecorationImage(image: NetworkImage(widget.user.photoUrl!))
+                  ),
             ),
           ),
         ),

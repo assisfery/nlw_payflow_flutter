@@ -2,7 +2,7 @@ import 'dart:convert';
 
 class UserModel{
   final String name;
-  final String photoUrl;
+  final String? photoUrl;
 
   UserModel({required this.name, required this.photoUrl});
 

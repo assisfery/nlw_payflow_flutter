@@ -21,7 +21,7 @@ class AuthController
       _isAuthenticated = true;
 
       saveUser(user);
-      Navigator.pushReplacementNamed(context, "/home");
+      Navigator.pushReplacementNamed(context, "/home", arguments: user);
     }
     else
     {
