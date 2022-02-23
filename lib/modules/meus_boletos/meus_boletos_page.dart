@@ -22,7 +22,7 @@ class _MeusBoletosPageState extends State<MeusBoletosPage> {
   Widget build(BuildContext context) {
     return Column(children: [
       Container(
-        height: 140,
+        height: 80,
         child: Stack(
           children: [
             Container(
@@ -41,6 +41,7 @@ class _MeusBoletosPageState extends State<MeusBoletosPage> {
           ],
         ),
       ),
+      const SizedBox(height: 24),
       Text(
         "Meus boletos",
         style: AppTextStyles.titleBoldHeading,
