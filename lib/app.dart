@@ -21,7 +21,7 @@ class AppWidget extends StatelessWidget {
         "/login" : (context) => const LoginPage(),
         "/home" : (context) => const HomePage(),
         "/barcode_scanner" : (context) => const BarcodeScannerPage(),
-        "/insert_boleto" : (context) => const InsertBoletoPage(),
+        "/insert_boleto" : (context) => InsertBoletoPage(),
       },
     );
   }

@@ -6,7 +6,7 @@ class InputText extends StatelessWidget {
   IconData icon;
 
   String? initialValue;
-  String Function(String?)? validator;
+  String? Function(String?)? validator;
   TextEditingController? controller;
   void Function(String value) onChanged;
 
@@ -29,6 +29,10 @@ class InputText extends StatelessWidget {
       child: Column(
         children: [
           TextFormField(
+            controller: controller,
+            validator: validator,
+            initialValue: initialValue,
+            onChanged: onChanged,
             decoration: InputDecoration(
                 border: InputBorder.none,
                 labelText: label,
