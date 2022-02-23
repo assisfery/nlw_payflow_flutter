@@ -71,20 +71,26 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
                   InputText(
                     label: "Nome do boleto",
                     icon: Icons.description_outlined,
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                      controller.onChange(name: value);
+                    },
                     validator: controller.validateName,
                   ),
                   InputText(
                     label: "Vencimento",
                     icon: FontAwesomeIcons.timesCircle,
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                      controller.onChange(dueDate: value);
+                    },
                     controller: dateController,
                     validator: controller.validateVencimento,
                   ),
                   InputText(
                     label: "Valor",
                     icon: FontAwesomeIcons.wallet,
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                      controller.onChange(valor: moneyController.numberValue);
+                    },
                     controller: moneyController,
                     validator: (_) =>
                         controller.validateValor(moneyController.numberValue),
@@ -92,7 +98,9 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
                   InputText(
                     label: "Código",
                     icon: FontAwesomeIcons.barcode,
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                      controller.onChange(barcode: value);
+                    },
                     controller: barcodeController,
                     validator: controller.validateCodigo,
                   ),
@@ -108,8 +116,9 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
           Navigator.pop(context);
         },
         secondaryLabel: "Cadastrar",
-        secondaryOnPressed: () {
-          controller.addBoleto();
+        secondaryOnPressed: () async{
+          await controller.addBoleto();
+          Navigator.pop(context);
         },
       ),
     );
