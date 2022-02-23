@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                 width: 56,
                 height: 56,
                 decoration: BoxDecoration(
-                    color: AppColors.primary,
+                    color: controller.currentPage == 0 ? AppColors.primary : AppColors.body,
                     borderRadius: BorderRadius.circular(10)),
                 child: IconButton(
                     onPressed: () {
@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                 },
                 icon: Icon(
                   Icons.description_outlined,
-                  color: AppColors.body,
+                  color: controller.currentPage == 1 ? AppColors.primary : AppColors.body,
                 ))
           ],
         ),

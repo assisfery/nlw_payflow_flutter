@@ -20,6 +20,9 @@ class _ExtractPageState extends State<ExtractPage> {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
+      SizedBox(
+        height: 24,
+      ),
       Text("Meus extratos", style: AppTextStyles.titleBoldHeading,),
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
